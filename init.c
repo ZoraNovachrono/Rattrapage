@@ -17,9 +17,9 @@ void initSDL() {
 
 SDL_Window* initWindow() {
     // create SDL window
-    SDL_Window* window = SDL_CreateWindow("snake",
+    SDL_Window* window = SDL_CreateWindow("SDL Project",
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-        1920, 1080, SDL_WINDOW_SHOWN);
+        800, 600, SDL_WINDOW_SHOWN);
     if (window == NULL) {
         printf("Failed to create window\n");
         SDL_Quit();

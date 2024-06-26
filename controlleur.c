@@ -77,7 +77,7 @@ void deplacement(int* dy, int* dx, int player1_up
 
 
 void deathZone(int x, int y, int* continuer) {
-    if (x <= 0 || x + TAILLE >= 1920 || y <= 0 || y + TAILLE >= 1080)
+    if (x <= 0 || x + TAILLE >= 800 || y <= 0 || y + TAILLE >= 600)
     {
         printf("mort");
         *continuer = 0;

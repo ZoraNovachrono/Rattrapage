@@ -26,8 +26,8 @@ void spawnItem(SDL_Renderer* renderer, int* nbreItem,
 	}
 	else
 	{
-		*itemX = rand() % 1891;
-		*itemY = rand() % 1051;
+		*itemX = rand() % (800-30+1);
+		*itemY = rand() % (600 -30 + 1);
 		draw(renderer, *itemX, *itemY, 30, 30, 255, 0, 0);
 		//printf("item : %d %d", *itemX, *itemY);
 		*nbreItem = 1;

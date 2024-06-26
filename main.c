@@ -28,26 +28,33 @@ int main(int argc, char* argv[]) {
     initSDL();
     SDL_Window* window = initWindow();
     SDL_Renderer* renderer = initRender(window);
+    SDL_Texture* imgBMP = loadTexture("../imagBMP.bmp", renderer);
     SDL_Event evenement;
     //randomisation
     srand(time(NULL));
     //boulce du jeu
     while (continuer) {
-        //affichage du jeu
         clearRendu(renderer);
+        SDL_RenderPresent(renderer);
+        renderImage(renderer, imgBMP, 0, 0, 800, 600);
         draw(renderer, x, y, taille, taille, 0, 255, 0);
-        spawnItem(renderer, &nbreItem, &itemX, &itemY, x, y);
-        //controlle du joueur
+        //spawnItem(renderer, &nbreItem, &itemX, &itemY, x, y);
         controller(&continuer, &player_up, &player_down,
             &player_left, &player_right);
         deplacement(&dy, &dx, player_up, player_left, player_down, player_right);
         x += dx; y += dy;
-        //mort du joueur
-        deathZone(x, y, &continuer);
-        SDL_RenderPresent(renderer);
+        //deathZone(x, y, &continuer);
         SDL_Delay(10);
     }
     //optimisation de la consommation
     void freeAll(renderer, window);
     return 0;
 }
+
+
+
+
+
+
+
+
