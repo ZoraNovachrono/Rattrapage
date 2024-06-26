@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
     //randomisation
     srand(time(NULL));
 
-    //boulce du jeu
+    //boulce du jeu inspiration snake
     while (continuer) {
         //affichage
         clearRendu(renderer);
