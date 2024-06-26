@@ -1,4 +1,4 @@
 ﻿  main.c
-C:\Users\qrecco\Documents\Rattrapage\Rattrapage\main.c(34,11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
-C:\Users\qrecco\Documents\Rattrapage\Rattrapage\main.c(32,15): warning C4101: 'evenement' : variable locale non référencée
-LINK : fatal error LNK1168: impossible d'ouvrir C:\Users\qrecco\Documents\Rattrapage\x64\Debug\Rattrapage.exe pour écrire
+C:\Users\qrecco\Documents\GitHub\Rattrapage\Rattrapage\main.c(35,11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+C:\Users\qrecco\Documents\GitHub\Rattrapage\Rattrapage\main.c(33,15): warning C4101: 'evenement' : variable locale non référencée
+  Rattrapage.vcxproj -> C:\Users\qrecco\Documents\GitHub\Rattrapage\x64\Debug\Rattrapage.exe

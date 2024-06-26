@@ -49,6 +49,7 @@ void clearRendu(SDL_Renderer* renderer) {
 
 void freeAll(SDL_Renderer* renderer, SDL_Window* window) {
     // free all
+
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();

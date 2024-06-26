@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <SDL_image.h>
 
 #include "init.h"
 #include "affichage.h"
@@ -28,33 +29,25 @@ int main(int argc, char* argv[]) {
     initSDL();
     SDL_Window* window = initWindow();
     SDL_Renderer* renderer = initRender(window);
-    SDL_Texture* imgBMP = loadTexture("../imagBMP.bmp", renderer);
+    SDL_Texture* texture = loadTexture("C:/Users/qrecco/Documents/GitHub/Rattrapage/Rattrapage/Image/imageBMP.bmp", renderer);
     SDL_Event evenement;
     //randomisation
     srand(time(NULL));
     //boulce du jeu
     while (continuer) {
         clearRendu(renderer);
-        SDL_RenderPresent(renderer);
-        renderImage(renderer, imgBMP, 0, 0, 800, 600);
+        renderImage(renderer, texture, 0, 0, 800, 600);
         draw(renderer, x, y, taille, taille, 0, 255, 0);
-        //spawnItem(renderer, &nbreItem, &itemX, &itemY, x, y);
+        spawnItem(renderer, &nbreItem, &itemX, &itemY, x, y);
         controller(&continuer, &player_up, &player_down,
             &player_left, &player_right);
         deplacement(&dy, &dx, player_up, player_left, player_down, player_right);
         x += dx; y += dy;
-        //deathZone(x, y, &continuer);
+        deathZone(x, y, &continuer);
+        SDL_RenderPresent(renderer);
         SDL_Delay(10);
     }
     //optimisation de la consommation
     void freeAll(renderer, window);
     return 0;
 }
-
-
-
-
-
-
-
-

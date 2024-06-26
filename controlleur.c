@@ -10,16 +10,16 @@
 void action(SDL_Event evenement, int* player1_up, int* player1_down,
     int* player1_right, int* player1_left, int valeur) {
     switch (evenement.key.keysym.sym) {
-    case SDLK_z:
+    case SDLK_UP:
         *player1_up = valeur;
         break;
-    case SDLK_s:
+    case SDLK_DOWN:
         *player1_down = valeur;
         break;
-    case SDLK_d:
+    case SDLK_RIGHT:
         *player1_right = valeur;
         break;
-    case SDLK_q:
+    case SDLK_LEFT:
         *player1_left = valeur;
         break;
     }
