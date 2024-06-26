@@ -7,7 +7,7 @@
 #include "item.h"
 #include "affichage.h"
 
-//axe d'amélioration collision plus précise
+
 void spawnItem(SDL_Renderer* renderer, int* nbreItem,
 	int* itemX, int* itemY, int x, int y) {
 

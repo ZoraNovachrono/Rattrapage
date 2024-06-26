@@ -24,26 +24,38 @@ int dx = 5;
 int dy = 0;
 int nbreItem = 1;
 
+
+
+
+
 int main(int argc, char* argv[]) {
     //initialisation
     initSDL();
     SDL_Window* window = initWindow();
     SDL_Renderer* renderer = initRender(window);
-    SDL_Texture* texture = loadTexture("C:/Users/qrecco/Documents/GitHub/Rattrapage/Rattrapage/Image/imageBMP.bmp", renderer);
+    SDL_Texture* texture = loadTexture("../Image/imageBMP.bmp", renderer);
     SDL_Event evenement;
     //randomisation
     srand(time(NULL));
+
     //boulce du jeu
     while (continuer) {
+        //affichage
         clearRendu(renderer);
         renderImage(renderer, texture, 0, 0, 800, 600);
+
         draw(renderer, x, y, taille, taille, 0, 255, 0);
         spawnItem(renderer, &nbreItem, &itemX, &itemY, x, y);
+
         controller(&continuer, &player_up, &player_down,
             &player_left, &player_right);
-        deplacement(&dy, &dx, player_up, player_left, player_down, player_right);
+        deplacement(&dy, &dx, player_up, player_left,
+            player_down, player_right);
+
         x += dx; y += dy;
+
         deathZone(x, y, &continuer);
+
         SDL_RenderPresent(renderer);
         SDL_Delay(10);
     }

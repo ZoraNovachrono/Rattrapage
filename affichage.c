@@ -12,7 +12,6 @@ SDL_Rect draw(SDL_Renderer* renderer, int x, int y, int largeur, int longueur,
     return gameobj;
 }
 
-
 SDL_Texture* loadTexture(const char* path, SDL_Renderer* renderer) {
     SDL_Surface* surface = IMG_Load(path);
     if (!surface) {
@@ -29,7 +28,8 @@ SDL_Texture* loadTexture(const char* path, SDL_Renderer* renderer) {
     return texture;
 }
 
-void renderImage(SDL_Renderer* renderer, SDL_Texture* texture, int posx, int posy, int width, int height) {
+void renderImage(SDL_Renderer* renderer, SDL_Texture* texture,
+    int posx, int posy, int width, int height) {
     SDL_Rect destRect = { posx, posy, width, height };
     SDL_RenderCopy(renderer, texture, NULL, &destRect);
 }
